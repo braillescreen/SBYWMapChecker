@@ -1,0 +1,32 @@
+//This code written by Patrick Wilson.
+
+int signs,zones,travelpoints,checkpoints,platforms,srcs,staircases,doors,belts,hazards,walls,deathzones,vanishing;
+string fn="map.txt";
+file f;
+void main() {
+fn=input_box("Map","Enter the map you want to pick from. Default is map.txt.");
+if(!file_exists(fn)) {
+alert("Error","File "+fn+" doesn't exist.");
+exit();
+}
+f.open(fn,"rb");
+string[] lines=string_split(f.read(), "\r\n",false);
+f.close();
+for(int i = 0; i<lines.length(); i++) {
+string[]p=string_split(lines[i]," ",false);
+if(p[0]=="sign") signs++;
+if(p[0]=="zone") zones++;
+if(p[0]=="sound_source"||p[0]=="sound_source3d") srcs++;
+if(p[0]=="platform") platforms++;
+if(p[0]=="staircase") staircases++;
+if(p[0]=="checkpoint") checkpoints++;
+if(p[0]=="door") doors++;
+if(p[0]=="belt") belts++;
+if(p[0]=="hazard") hazards++;
+if(p[0]=="travelpoint") travelpoints++;
+if(p[0]=="wall") walls++;
+if(p[0]=="death") deathzones++;
+if(p[0]=="vanishing") vanishing++;
+}
+alert("Map data","Out of the "+lines.length()+" lines of this map, there are a grand total of "+zones+" zones, "+signs+" signs, "+staircases+" staircases, "+travelpoints+" travelpoints, "+checkpoints+" checkpoints, "+platforms+" platforms, "+doors+" doors, "+hazards+" hazards, "+belts+" conveyor belts, "+walls+" walls, "+deathzones+" death zones, "+vanishing+" vanishing platforms, and "+srcs+" sound sources.");
+}
