@@ -26,4 +26,4 @@ When you run the script, the following will occur:
 * An alert will show displaying this map information in detail. It will then exit.
 
 ## Attribution
-If you find a way to incorporate this into any of you're projects, I ask that you mention that I created this script and possibly a link to the repository ([ https://github.com/braillescreen/SBYWMapChecker].
+If you find a way to incorporate this into any of you're projects, I ask that you mention that I created this script and possibly a link to the repository (https://github.com/braillescreen/SBYWMapChecker).
