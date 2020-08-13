@@ -6,7 +6,7 @@ I simply wanted to see how large my maps were on SBYW, so I made a simple script
 ## List of what the checker can scan for
 * Signs
 * Zones
-* Sound sources (2D and 3D sources that are now deprecated are counted as one set of sources).
+* Sound sources (2D and 3D sources (now deprecated) are counted as one set of sources).
 * Platforms
 * Staircases
 * Checkpoints
@@ -19,6 +19,7 @@ I simply wanted to see how large my maps were on SBYW, so I made a simple script
 * Vanishing platforms
 
 ## Running
+There is a release build available, for those who do not have the time or knowhow to run this code. Go grab it at the releases page.
 When you run the script, the following will occur:
 * An input box will come up asking you for the file name. If this is blank, it will default to a file called "map.txt".
 * If the file doesn't exist, you will be told and the program will exit.
