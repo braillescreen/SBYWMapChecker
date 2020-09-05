@@ -2,6 +2,7 @@
 
 int signs,zones,travelpoints,checkpoints,platforms,srcs,staircases,doors,belts,hazards,walls,deathzones,vanishing;
 file f;
+timer t;
 void main() {
 string fn=input_box("Map","Enter the map you want to pick from. If left blank, it will default to map.txt.");
 if(fn=="") fn="map.txt";
@@ -12,6 +13,7 @@ exit();
 f.open(fn,"rb");
 string[] lines=string_split(f.read(), "\r\n",false);
 f.close();
+t.restart();
 for(int i = 0; i<lines.length(); i++) {
 string[]p=string_split(lines[i]," ",false);
 if(p[0]=="sign") signs++;
@@ -28,7 +30,8 @@ if(p[0]=="wall") walls++;
 if(p[0]=="death") deathzones++;
 if(p[0]=="vanishing") vanishing++;
 }
-string results="Out of the "+lines.length()+" lines of this map, there are a grand total of "+zones+" zones, "+signs+" signs, "+staircases+" staircases, "+travelpoints+" travelpoints, "+checkpoints+" checkpoints, "+platforms+" platforms, "+doors+" doors, "+hazards+" hazards, "+belts+" conveyor belts, "+walls+" walls, "+deathzones+" death zones, "+vanishing+" vanishing platforms, and "+srcs+" sound sources.";
+t.pause();
+string results="Out of the "+lines.length()+" lines of this map, there are a grand total of "+zones+" zones, "+signs+" signs, "+staircases+" staircases, "+travelpoints+" travelpoints, "+checkpoints+" checkpoints, "+platforms+" platforms, "+doors+" doors, "+hazards+" hazards, "+belts+" conveyor belts, "+walls+" walls, "+deathzones+" death zones, "+vanishing+" vanishing platforms, and "+srcs+" sound sources. The check took "+t.elapsed+" MS.";
 alert("Map Data",results);
 if(question("Clipboard","Do you want to copy this to the clipboard?")==1) clipboard_copy_text(results);
 }
