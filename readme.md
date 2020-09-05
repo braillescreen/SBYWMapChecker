@@ -1,5 +1,6 @@
 # Scrolling Battles (You're World) map checker.
 A basic program to check data from a map, such as how many zones, travel points, etc. there are.
+
 ## History
 I simply wanted to see how large my maps were on SBYW, so I made a simple script to let me do that.
 
@@ -20,6 +21,7 @@ I simply wanted to see how large my maps were on SBYW, so I made a simple script
 
 ## Running
 There is a release build available, for those who do not have the time or knowhow to run this code. Go grab it at the releases page.
+
 When you run the script, the following will occur:
 * An input box will come up asking you for the file name. If this is blank, it will default to a file called "map.txt".
 * If the file doesn't exist, you will be told and the program will exit.
