@@ -11,11 +11,11 @@ alert("Error","File "+fn+" doesn't exist.");
 exit();
 }
 f.open(fn,"rb");
-string[] lines=string_split(f.read(), "\r\n",false);
+string[] lines=f.read().split("\r\n",false);
 f.close();
 t.restart();
 for(int i = 0; i<lines.length(); i++) {
-string[]p=string_split(lines[i]," ",false);
+string[]p=lines[i].split(" ",false);
 if(p[0]=="sign") signs++;
 if(p[0]=="zone") zones++;
 if(p[0]=="sound_source"||p[0]=="sound_source3d") srcs++;
@@ -33,5 +33,5 @@ if(p[0]=="vanishing") vanishing++;
 t.pause();
 string results="Out of the "+lines.length()+" lines of this map, there are a grand total of "+zones+" zones, "+signs+" signs, "+staircases+" staircases, "+travelpoints+" travelpoints, "+checkpoints+" checkpoints, "+platforms+" platforms, "+doors+" doors, "+hazards+" hazards, "+belts+" conveyor belts, "+walls+" walls, "+deathzones+" death zones, "+vanishing+" vanishing platforms, and "+srcs+" sound sources. The check took "+t.elapsed+" MS.";
 alert("Map Data",results);
-if(question("Clipboard","Do you want to copy this to the clipboard?")==1) clipboard_copy_text(results);
+if(question("Clipboard","Do you want to copy this to the clipboard?")==1) clipboard_set_text(results);
 }
